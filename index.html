@@ -24,6 +24,68 @@
             margin-bottom: 30px;
         }
 
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .card-content p {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .card-content a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            color: #fff;
+            background-color: #ff0000;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .card-content a:hover {
+            background-color: #cc0000;
+        }
+
+        .pdf-embed {
+            margin-top: 20px;
+        }
+
+        .locked {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            color: #ff0000;
+        }
+
+        .locked img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
         .download-section {
             text-align: center;
             margin-top: 30px;
@@ -48,6 +110,20 @@
             background-color: #cc0000;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const module1Button = document.querySelector('.card:nth-child(1) .card-content a');
+            const module2Button = document.querySelector('.card:nth-child(2) .card-content a');
+
+            module1Button.addEventListener('click', function() {
+                window.location.href = 'ebook1-casamento.pdf';
+            });
+
+            module2Button.addEventListener('click', function() {
+                window.location.href = 'ebook2-casamento.pdf';
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -56,9 +132,62 @@
             <p>O Guia Secreto para ter um Casamento Perfeito & Econômico! Mesmo com pouco tempo e muitos convidados!</p>
         </div>
 
+        <div class="cards">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Módulo 1</h3>
+                    <p>Clique no botão abaixo para ver o conteúdo em uma página maior ou leia na própria página logo abaixo do botão!</p>
+                    <a href="#">Visualizar Conteúdo</a>
+                    <div class="pdf-embed">
+                        <iframe src="https://gamma.app/embed/h6zttmdhw1p91mq" style="width: 700px; max-width: 100%; height: 450px" allow="fullscreen" title="Casamento dos Sonhos com Orçamento de R$7 Mil: Guia Completo"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Módulo 2</h3>
+                    <p>Clique no botão abaixo para ver o conteúdo em uma página maior ou leia na própria página logo abaixo do botão!</p>
+                    <a href="#">Visualizar Conteúdo</a>
+                    <div class="pdf-embed">
+                        <iframe src="https://gamma.app/embed/y050x9eb420wce9" style="width: 700px; max-width: 100%; height: 450px" allow="fullscreen" title="Checklist e Planner do Casamento: Tudo Para Organizar Seu Grande Dia"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-content locked">
+		    <h3>Módulo 3</h3>
+                    <img src="locked.webp" alt="Cadeado">
+                    <p>ESSE CONTEÚDO VAI SER LIBERADO DAQUI A 2 DIAS</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-content locked">
+		    <h3>Módulo 4</h3>
+                    <img src="locked.webp" alt="Cadeado">
+                    <p>ESSE CONTEÚDO VAI SER LIBERADO DAQUI A 2 DIAS</p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-content locked">
+		    <h3>Módulo 5</h3>
+                    <img src="locked.webp" alt="Cadeado">
+                    <p>ESSE CONTEÚDO VAI SER LIBERADO DAQUI A 2 DIAS</p>
+                </div>
+            </div>
+        </div>
+
         <div class="download-section">
-            <p>Clique no botão abaixo para acessar e editar a planilha de gastos do casamento</p>
-            <a href="https://docs.google.com/spreadsheets/d/1DUEqWUH1D84DkvyP0DlnPwP858WMXzFi-QFJmvAqgX4/edit?usp=sharing" target="_blank">Editar Planilha</a>
+            <p>Clique no botão abaixo para acessar a planilha de gastos do casamento</p>
+            <a href="planilha.xlsx" download>Baixar Planilha</a>
         </div>
     </div>
 </body>
